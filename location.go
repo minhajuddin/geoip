@@ -2,8 +2,8 @@ package main
 
 type Location struct {
 	CountryCode string
-	IpStart     int32
-	IpEnd       int32
+	IpStart     uint32
+	IpEnd       uint32
 }
 
 //sort interface
@@ -15,7 +15,7 @@ func (self Locations) Less(i, j int) bool { return self[i].IpStart < self[j].IpS
 
 //search
 //copied straight from sort/search.go
-func SearchLocation(ip int32) string {
+func SearchLocation(ip uint32) string {
 	i, j := 0, len(db)
 	for i < j {
 		h := i + (j-i)/2 // avoid overflow when computing h

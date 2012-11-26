@@ -39,21 +39,21 @@ func loadDb() {
 			continue
 		}
 
-		start, err := strconv.ParseInt(tokens[0], 10, 32)
+		start, err := strconv.ParseUint(tokens[0], 10, 32)
 		if err != nil {
 			log.Println("invalid number", tokens[0], err)
 			continue
 		}
 
-		end, err := strconv.ParseInt(tokens[1], 10, 32)
+		end, err := strconv.ParseUint(tokens[1], 10, 32)
 		if err != nil {
 			log.Println("invalid number", tokens[1])
 			continue
 		}
 
 		l := Location{
-			IpStart:     int32(start),
-			IpEnd:       int32(end),
+			IpStart:     uint32(start),
+			IpEnd:       uint32(end),
 			CountryCode: tokens[2],
 		}
 
