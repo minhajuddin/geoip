@@ -41,7 +41,7 @@ func loadDb() {
 
 		start, err := strconv.ParseInt(tokens[0], 10, 32)
 		if err != nil {
-			log.Println("invalid number", tokens[0])
+			log.Println("invalid number", tokens[0], err)
 			continue
 		}
 
